@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Index";
+    
+}
+@using System.Web.Mvc.Html;
+@model DTO.UserDTO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Log in</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <!-- icheck bootstrap -->
+    <link href="~/css/icheck-bootstrap.min.css" rel="stylesheet" />
+    <!-- Theme style  -->
+    <link href="~/css/adminlte.min.css" rel="stylesheet" />
+    <!-- <link href="~/css/test.css" rel="stylesheet" /> -->
+    
+    <!-- <a href="d:\repos\oakcourse\ui\areas\admin\content\css\adminlte.min.css.map">d:\repos\oakcourse\ui\areas\admin\content\css\adminlte.min.css.map</a>  -->
+</head>
+<body class="hold-transition login-page">
+  <!--  <article class="Grid"> -->
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="../../Admin"><b>Admin</b>CCI</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                <form method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="UserName" name="UserName">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(x=>x.UserName)
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password" name="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.ValidationMessageFor(x=>x.Password)
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+           
+                <!-- /.social-auth-links -->
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div> <!-- </article> -->
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="~/js/jquery.min.js"></script>
+   
+    <!-- Bootstrap 4 -->
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AdminLTE App -->
+    <script src="~/js/adminlte.min.js"></script>
+    
+</body>
+</html>
