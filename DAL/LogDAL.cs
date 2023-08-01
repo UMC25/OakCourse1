@@ -13,6 +13,31 @@ namespace DAL
 {
     public class LogDAL:PostContext
     {
+        //public static string GetIpAddress()
+        //{
+        //    var request = HttpContext.Current.Request;
+        //    // Look for a proxy address first
+        //    var ip = request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+        //    // If there is no proxy, get the standard remote address
+        //    if (string.IsNullOrWhiteSpace(ip)
+        //        || string.Equals(ip, "unknown", StringComparison.OrdinalIgnoreCase))
+        //        ip = request.ServerVariables["REMOTE_ADDR"];
+        //    else
+        //    {
+        //        //extract first IP
+        //        var index = ip.IndexOf(',');
+        //        if (index > 0)
+        //            ip = ip.Substring(0, index);
+
+        //        //remove port
+        //        index = ip.IndexOf(':');
+        //        if (index > 0)
+        //            ip = ip.Substring(0, index);
+        //    }
+
+        //    return ip;
+        //}
         public static void AddLog(int ProcessType, string TableName, int ProcessID)
         {
             Log_Table log_Table = new Log_Table();
@@ -21,7 +46,8 @@ namespace DAL
             log_Table.ProcessID = ProcessID;
             log_Table.ProcessCategoryType = TableName;
             log_Table.ProccessDate = DateTime.Now;
-            //log_Table.IPAdress = HttpContext.Current.Request.UserHostAddress;
+            //var context = System.Web.HttpContext.Current;
+            //log_Table.IPAdress = context.Request.UserHostAddress;
             log_Table.IPAdress = "Unknown";
             db.Log_Table.Add(log_Table);
             db.SaveChanges();
